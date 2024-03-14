@@ -9,6 +9,7 @@ export default function PanierScreen() {
     items,
     updateItemQuantity,
     removeItem,
+    emptyCart,
     cartTotal,
   } = useCart();
 
@@ -69,6 +70,7 @@ export default function PanierScreen() {
             </li>
           ))}
         </ul>
+        <button className="cart-btn cart-btn-remove" onClick={() =>emptyCart()}>Vider le panier</button>
       </div>
     </CartProvider>
   );
