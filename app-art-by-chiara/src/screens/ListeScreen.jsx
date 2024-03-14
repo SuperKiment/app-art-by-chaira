@@ -57,21 +57,13 @@ export default function getAllProducts() {
                       <h2>{produit.title}</h2>
                       <img src={produit.image} alt={produit.title} />
                       <p className="price">Prix : {produit.price} €</p>
-                      <p>Taille : {produit.size}</p>
-                      <p>Collection : {produit.collection}</p>
                       <div className="two-column">
-                        <a
-                          className="aToSee"
-                          href={"/one-produit/" + produit.id}
-                        >
+                        <a href={"/one-produit/" + produit.id}>
                           <i className="fas fa-eye"></i> Voir le produit
                         </a>
-                        <button
-                          className="btn-add-to-cart"
-                          onClick={() => addItem(produit)}
-                        >
+                        <a onClick={() => addItem(produit)}>
                           <i class="fas fa-shopping-cart"></i> Ajouter au panier
-                        </button>
+                        </a>
                       </div>
                     </>
                   ) : (
