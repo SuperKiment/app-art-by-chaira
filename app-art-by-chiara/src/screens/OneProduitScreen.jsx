@@ -11,11 +11,35 @@ function OneProduitPage({ navigation, idProduit }) {
       setOneProduit(rep);
     });
   }, []);
-  console.log(oneProduit);
+  console.log("produit :", oneProduit);
 
   return (
     <>
-      <h1>{oneProduit != undefined ? oneProduit.title : "Loading"}</h1>
+      <div className="container">
+        {!oneProduit ? (
+          <div>
+            <p>Chargement...</p>
+          </div>
+        ) : (
+          <div className="one-product-container">
+            <div className="image-container">
+              <img src={oneProduit.image} alt={oneProduit.title} />
+            </div>
+
+            <div className="info-container">
+              <h1>{oneProduit.title}</h1>
+              <p>{oneProduit.description}</p>
+              <p>Prix : {oneProduit.price} €</p>
+              <p>Taille : {oneProduit.size}</p>
+              <p>Collection : {oneProduit.collection}</p>
+
+              <div>
+                <button className="button">Ajouter à mon panier</button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </>
   );
 }
