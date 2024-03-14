@@ -70,12 +70,9 @@ export default function PanierScreen() {
             </li>
           ))}
         </ul>
-        <button
-          className="cart-btn cart-btn-remove"
-          onClick={() => emptyCart()}
-        >
-          Payer
-        </button>
+        <div className="PayerContains">
+          <a onClick={() => emptyCart()}>Payer</a>
+        </div>
       </div>
     </CartProvider>
   );
