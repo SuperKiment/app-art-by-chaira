@@ -4,13 +4,9 @@ import "../css/style.css";
 const Navbar = () => {
   const pages = [
     {
-      path: "/",
+      path: "/liste",
       name: "Arts By Chiara",
       special: true, // Ajouter un indicateur pour l'élément spécial
-    },
-    {
-      path: "/",
-      name: "Home",
     },
     {
       path: "/liste",
