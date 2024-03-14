@@ -5,11 +5,6 @@ const Navbar = () => {
   const pages = [
     {
       path: "/liste",
-      name: "Arts By Chiara",
-      special: true, // Ajouter un indicateur pour l'élément spécial
-    },
-    {
-      path: "/liste",
       name: "Liste",
     },
     {
@@ -21,6 +16,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <ul className="nav-list">
+        <li>
+          <h1 style={{ fontSize: "40px", margin: "0" }}>Art By Chiara</h1>
+        </li>
         {pages.map((link, index) => (
           <li key={index}>
             <NavLink

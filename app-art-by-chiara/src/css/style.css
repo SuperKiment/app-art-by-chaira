@@ -1,6 +1,7 @@
 * {
   color: #fff;
   transition: 200ms;
+  font-family: "Roboto", sans-serif;
 }
 
 .product-list {
@@ -45,7 +46,6 @@ img {
 
 p {
   color: #fff;
-  font-family: "Roboto", sans-serif;
   text-align: center;
 }
 .product-list-container .price {
@@ -68,15 +68,14 @@ a {
   font-size: large;
   color: #fff;
   text-decoration: none;
-  margin-bottom: 5px;
   margin-right: 3px;
 }
 
 body,
 html {
-  background-color: black;
   padding: 0;
   margin: 0;
+  background-color: #000;
 }
 
 .image-container,
@@ -121,7 +120,10 @@ html {
 }
 
 .nav-list li {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .lien {
@@ -129,33 +131,24 @@ html {
   padding: 10px;
   color: #fff;
   text-decoration: none;
-  width: 90%;
   font-size: 25px;
   padding-bottom: 0;
   padding-top: 20px;
-
-}
-
-.lien:hover {
-  background-color: #555;
-}
-
-/*.active {
-  font-weight: bolder;
-  font-size: large;
-}*/
-
-.special-link {
-  color: white; /* Couleur jaune pour l'élément spécial */
-  font-size: 40px; /* Taille de police plus grande pour l'élément spécial */
-  width: 100%;
-  padding-bottom: 10;
-  padding-top: 10px;
+  text-align: center;
 }
 
 .lien:hover,
 .special-link:hover {
-  color: #ccc;
+  background-color: #000;
+  color: #d4af37;
+}
+
+.special-link {
+  color: white;
+  font-size: 40px;
+  width: 100%;
+  padding-bottom: 10;
+  padding-top: 10px;
 }
 
 .input-text {

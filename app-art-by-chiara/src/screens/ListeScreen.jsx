@@ -59,10 +59,15 @@ export default function getAllProducts() {
                       <p className="price">Prix : {produit.price} €</p>
                       <div className="two-column">
                         <a href={"/one-produit/" + produit.id}>
-                          <i className="fas fa-eye"></i> Voir le produit
+                          <span>
+                            <i className="fas fa-eye"></i> Voir le produit
+                          </span>
                         </a>
                         <a onClick={() => addItem(produit)}>
-                          <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                          <span>
+                            <i className="fas fa-shopping-cart"></i> Ajouter au
+                            panier
+                          </span>
                         </a>
                       </div>
                     </>

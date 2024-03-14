@@ -1,18 +1,4 @@
-/*
-function App() {
-  const [count, setCount] = useState(0);
-  const [oneProduit, setOneProduit] = useState();
-
-  useEffect(() => {
-    GetOneProduit("123456").then((rep) => {
-      setOneProduit(rep);
-    });
-  }, []);
-
-  console.log(oneProduit);
-}
-*/
-import '@fortawesome/fontawesome-free/css/all.css';
+import "@fortawesome/fontawesome-free/css/all.css";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import PanierScreen from "./screens/PanierScreen";
@@ -56,9 +42,9 @@ const Main = () => {
 export default function App() {
   return (
     <>
-    <CartProvider>
-      <Navigation />
-      <Main></Main>
+      <CartProvider>
+        <Navigation />
+        <Main></Main>
       </CartProvider>
     </>
   );
