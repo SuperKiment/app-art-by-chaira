@@ -15,7 +15,6 @@ function App() {
 
 import { Route, Routes, useLocation } from "react-router-dom";
 import Navigation from "./components/Navigation";
-import HomeScreen from "./screens/HomeScreen";
 import PanierScreen from "./screens/PanierScreen";
 import OneProduitScreen from "./screens/OneProduitScreen";
 import ListeScreen from "./screens/ListeScreen";
@@ -29,14 +28,6 @@ const Main = () => {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.key}>
-        <Route
-          path="/"
-          element={
-            <TransitionPage>
-              <HomeScreen />
-            </TransitionPage>
-          }
-        ></Route>
         <Route
           path="/panier"
           element={

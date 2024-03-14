@@ -32,12 +32,6 @@ export default function getAllProducts() {
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Rechercher par Titre"
-        onChange={(e) => setRecherche(e.target.value)}
-        style={{ color: "black" }}
-      />
       {loading ? (
         <div>
           <p>Chargement...</p>
@@ -45,19 +39,37 @@ export default function getAllProducts() {
       ) : (
         <CartProvider>
           <div className="product-list-container" align="center">
+            <input
+              type="text"
+              placeholder="Rechercher par Titre"
+              onChange={(e) => setRecherche(e.target.value)}
+              className="input-text"
+            />
             <h1>Liste des Œuvres</h1>
             <div className="product-list">
               {produits.map((produit) => (
                 <div key={produit.id} className="product-item">
-                  {recherche == "" || produit.title.includes(recherche) ? (
+                  {recherche == "" ||
+                  produit.title
+                    .toLowerCase()
+                    .includes(recherche.toLowerCase()) ? (
                     <>
                       <h2>{produit.title}</h2>
                       <img src={produit.image} alt={produit.title} />
                       <p className="price">Prix : {produit.price} €</p>
-                      <a className="aToSee" href={"/one-produit/" + produit.id}>
-                        Voir le produit
-                      </a>
-                      <a onClick={() => addItem(produit)}>Ajouter au panier</a>
+                      <p>Taille : {produit.size}</p>
+                      <p>Collection : {produit.collection}</p>
+                      <div className="two-column">
+                        <a
+                          className="aToSee"
+                          href={"/one-produit/" + produit.id}
+                        >
+                          Voir le produit
+                        </a>
+                        <button onClick={() => addItem(produit)}>
+                          Ajouter au panier
+                        </button>
+                      </div>
                     </>
                   ) : (
                     <></>
