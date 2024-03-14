@@ -11,10 +11,6 @@ export default () => {
       name: "Panier",
     },
     {
-      path: "/detail-produit",
-      name: "Detail Produit",
-    },
-    {
       path: "/liste",
       name: "Liste",
     },

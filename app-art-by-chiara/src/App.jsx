@@ -16,7 +16,6 @@ function App() {
 import { Route, Routes, useLocation } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import HomeScreen from "./screens/HomeScreen";
-import DetailProduitScreen from "./screens/DetailProduitScreen";
 import PanierScreen from "./screens/PanierScreen";
 import OneProduitScreen from "./screens/OneProduitScreen";
 import ListeScreen from "./screens/ListeScreen";
@@ -41,14 +40,6 @@ const Main = () => {
           element={
             <TransitionPage>
               <PanierScreen />
-            </TransitionPage>
-          }
-        ></Route>
-        <Route
-          path="/detail-produit"
-          element={
-            <TransitionPage>
-              <DetailProduitScreen />
             </TransitionPage>
           }
         ></Route>
