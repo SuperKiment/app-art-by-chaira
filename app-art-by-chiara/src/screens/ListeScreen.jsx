@@ -8,6 +8,7 @@ export default function getAllProducts() {
   const [loading, setLoading] = useState(true);
   const [produits, setProduits] = useState([]);
   const [recherche, setRecherche] = useState("");
+  const [tri, setTri] = useState("Croissant");
 
   useEffect(() => {
     const url = "https://65b907e2b71048505a8a06c0.mockapi.io/api/prints/";
@@ -30,6 +31,22 @@ export default function getAllProducts() {
     fetchProducts();
   }, []);
 
+  const trierValue = (e) => {
+    setTri(e.target.value);
+  };
+
+  const sortedProduits = produits.sort((a, b) => {
+    if (tri === "Croissant") {
+      return a.id.localeCompare(b.id);
+    } else {
+      if (tri === "NameAlphabetique") {
+        return a.title.localeCompare(b.title);
+      } else {
+        return b.id.localeCompare(a.id);
+      }
+    }
+  });
+
   return (
     <div>
       {loading ? (
@@ -39,15 +56,24 @@ export default function getAllProducts() {
       ) : (
         <CartProvider>
           <div className="product-list-container" align="center">
-            <input
-              type="text"
-              placeholder="Rechercher par Titre"
-              onChange={(e) => setRecherche(e.target.value)}
-              className="input-text"
-            />
             <h1>Liste des Œuvres</h1>
+            <div className="flex-container">
+              <input
+                type="text"
+                placeholder="Rechercher par Titre"
+                onChange={(e) => setRecherche(e.target.value)}
+                className="input-text"
+              />
+              <select value={tri} onChange={trierValue}>
+                <option value="Croissant">Par prix (croissant)</option>
+                <option value="Décroissant">Par prix (décroissant)</option>
+                <option value="NameAlphabetique">
+                  Par ordre alphabétique des noms
+                </option>
+              </select>
+            </div>
             <div className="product-list">
-              {produits.map((produit) => (
+              {sortedProduits.map((produit) => (
                 <div key={produit.id} className="product-item">
                   {recherche == "" ||
                   produit.title
