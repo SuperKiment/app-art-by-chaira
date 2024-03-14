@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import GetOneProduit from "../api.jsx";
+import GetOneProduit from "../components/api.jsx";
 import { useParams } from "react-router";
 
 function OneProduitPage({ navigation, idProduit }) {
-  const {id} = useParams()
+  const { id } = useParams();
   const [oneProduit, setOneProduit] = useState();
 
   useEffect(() => {

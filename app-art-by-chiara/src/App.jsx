@@ -19,7 +19,8 @@ import Navigation from "./components/Navigation";
 import HomeScreen from "./screens/HomeScreen";
 import DetailProduitScreen from "./screens/DetailProduitScreen";
 import PanierScreen from "./screens/PanierScreen";
-import OneProduitPage from "./screens/OneProduitScreen";
+import OneProduitScreen from "./screens/OneProduitScreen";
+import ListeScreen from "./screens/ListeScreen";
 // import { AnimatePresence } from "framer-motion";
 
 const Main = () => {
@@ -30,7 +31,8 @@ const Main = () => {
       <Route path="/" element={<HomeScreen />}></Route>
       <Route path="/panier" element={<PanierScreen />}></Route>
       <Route path="/detail-produit" element={<DetailProduitScreen />}></Route>
-      <Route path="/one-produit/:id" element={<OneProduitPage idProduit={"123456"} />}></Route>
+      <Route path="/liste" element={<ListeScreen />}></Route>
+      <Route path="/one-produit/:id" element={<OneProduitScreen idProduit={"123456"} />}></Route>
     </Routes>
     //</AnimatePresence>
   );

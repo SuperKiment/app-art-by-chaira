@@ -1,25 +1,24 @@
 import React, { useState, useEffect } from "react";
-import '../public/style.css'
+import "../css/style.css";
 
 export default function getAllProducts() {
   const [loading, setLoading] = useState(true);
   const [produits, setProduits] = useState([]);
 
   useEffect(() => {
-    const url =
-      "https://65b907e2b71048505a8a06c0.mockapi.io/api/prints/";
+    const url = "https://65b907e2b71048505a8a06c0.mockapi.io/api/prints/";
 
     const fetchProducts = async () => {
       try {
         const response = await fetch(url);
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         const data = await response.json();
         setProduits(data);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching products:', error);
+        console.error("Error fetching products:", error);
         setLoading(false);
       }
     };
@@ -30,7 +29,9 @@ export default function getAllProducts() {
   return (
     <div>
       {loading ? (
-        <div><p>Chargement...</p></div>
+        <div>
+          <p>Chargement...</p>
+        </div>
       ) : (
         <div className="product-list-container" align="center">
           <h1>Liste des produits</h1>
