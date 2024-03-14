@@ -12,7 +12,7 @@ function App() {
   console.log(oneProduit);
 }
 */
-
+import '@fortawesome/fontawesome-free/css/all.css';
 import { Route, Routes, useLocation } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import PanierScreen from "./screens/PanierScreen";

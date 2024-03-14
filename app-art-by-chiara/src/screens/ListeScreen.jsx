@@ -64,10 +64,13 @@ export default function getAllProducts() {
                           className="aToSee"
                           href={"/one-produit/" + produit.id}
                         >
-                          Voir le produit
+                          <i className="fas fa-eye"></i> Voir le produit
                         </a>
-                        <button onClick={() => addItem(produit)}>
-                          Ajouter au panier
+                        <button
+                          className="btn-add-to-cart"
+                          onClick={() => addItem(produit)}
+                        >
+                          <i class="fas fa-shopping-cart"></i> Ajouter au panier
                         </button>
                       </div>
                     </>
