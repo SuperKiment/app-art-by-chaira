@@ -14,11 +14,6 @@ function OneProduitPage({ navigation, idProduit }) {
   console.log(oneProduit);
 
   return (
-<<<<<<< Updated upstream:app-art-by-chiara/src/OneProduit.jsx
-    <>
-      <h1>Coucoucou</h1>
-    </>
-=======
     <div className="container">
       {loading == false ? (
         <div>
@@ -44,7 +39,6 @@ function OneProduitPage({ navigation, idProduit }) {
         </div>
       )}
     </div>
->>>>>>> Stashed changes:app-art-by-chiara/src/screens/OneProduitScreen.jsx
   );
 }
 
