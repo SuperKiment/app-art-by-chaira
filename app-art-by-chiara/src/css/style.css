@@ -1,4 +1,4 @@
-*{
+* {
   color: #fff;
 }
 
@@ -22,7 +22,7 @@
   width: 100%;
   max-width: 400px;
   height: auto;
-  border: 4px solid #D4af37;
+  border: 4px solid #d4af37;
   border-radius: 12px;
 }
 
@@ -38,6 +38,8 @@
   color: red;
 }
 
-#root{
-    background-color: black;
+body,html {
+  background-color: black;
+  padding: 0;
+  margin: 0;
 }
