@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import GetOneProduit from "./api.jsx";
+import GetOneProduit from "../api.jsx";
+import { useParams } from "react-router";
 
 function OneProduitPage({ navigation, idProduit }) {
+  const {id} = useParams()
   const [oneProduit, setOneProduit] = useState();
 
   useEffect(() => {
-    GetOneProduit(idProduit).then((rep) => {
+    GetOneProduit(id).then((rep) => {
       setOneProduit(rep);
     });
   }, []);
@@ -13,7 +15,7 @@ function OneProduitPage({ navigation, idProduit }) {
 
   return (
     <>
-      <h1>Coucoucou</h1>
+      <h1>{oneProduit != undefined ? oneProduit.title : "Loading"}</h1>
     </>
   );
 }
