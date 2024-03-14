@@ -53,16 +53,11 @@ export default function getAllProducts() {
                     <>
                       <h2>{produit.title}</h2>
                       <img src={produit.image} alt={produit.title} />
-                      <p className="description">{produit.description}</p>
                       <p className="price">Prix : {produit.price} €</p>
-                      <p>Taille : {produit.size}</p>
-                      <p>Collection : {produit.collection}</p>
                       <a className="aToSee" href={"/one-produit/" + produit.id}>
                         Voir le produit
                       </a>
-                      <button onClick={() => addItem(produit)}>
-                        Ajouter au panier
-                      </button>
+                      <a onClick={() => addItem(produit)}>Ajouter au panier</a>
                     </>
                   ) : (
                     <></>

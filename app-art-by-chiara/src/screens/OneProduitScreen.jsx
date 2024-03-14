@@ -34,7 +34,7 @@ function OneProduitPage({ navigation, idProduit }) {
               <p>Collection : {oneProduit.collection}</p>
 
               <div>
-                <button className="button">Ajouter à mon panier</button>
+                <a className="button">Ajouter à mon panier</a>
               </div>
             </div>
           </div>
