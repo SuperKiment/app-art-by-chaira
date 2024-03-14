@@ -21,6 +21,8 @@ import OneProduitScreen from "./screens/OneProduitScreen";
 import ListeScreen from "./screens/ListeScreen";
 import { AnimatePresence } from "framer-motion";
 import TransitionPage from "./components/TransitionPage";
+import { CartProvider } from "react-use-cart";
+// import { AnimatePresence } from "framer-motion";
 
 const Main = () => {
   const location = useLocation();
@@ -63,8 +65,10 @@ const Main = () => {
 export default function App() {
   return (
     <>
+    <CartProvider>
       <Navigation />
       <Main></Main>
+      </CartProvider>
     </>
   );
 }
