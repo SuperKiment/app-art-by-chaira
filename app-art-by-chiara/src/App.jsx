@@ -7,6 +7,7 @@ import ListeScreen from "./screens/ListeScreen";
 import { AnimatePresence } from "framer-motion";
 import TransitionPage from "./components/TransitionPage";
 import { CartProvider } from "react-use-cart";
+import { ToastContainer, toast } from 'react-toastify';
 // import { AnimatePresence } from "framer-motion";
 
 const Main = () => {
@@ -42,9 +43,24 @@ const Main = () => {
 export default function App() {
   return (
     <>
-      <CartProvider>
-        <Navigation />
-        <Main></Main>
+    <CartProvider>
+      <Navigation />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={true}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="light"
+        />
+      <ToastContainer />
+      <Main>
+
+      </Main>
       </CartProvider>
     </>
   );

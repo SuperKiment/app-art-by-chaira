@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
-import TransitionPage from "../components/TransitionPage";
 import { CartProvider, useCart } from "react-use-cart";
 import "../css/style.css"; // Importer le fichier CSS pour les styles
 
 export default function PanierScreen() {
-  const { isEmpty, totalUniqueItems, items, updateItemQuantity, removeItem } =
-    useCart();
-
-  const { cartTotal } = useCart();
+  const {
+    isEmpty,
+    totalUniqueItems,
+    items,
+    updateItemQuantity,
+    removeItem,
+    emptyCart,
+    cartTotal,
+  } = useCart();
 
   // Si le panier est vide, afficher un message
   if (isEmpty) {
@@ -21,19 +25,29 @@ export default function PanierScreen() {
   return (
     <CartProvider>
       <div className="product-list-container">
-        <h1>Panier : {totalUniqueItems} {totalUniqueItems == 1 ? "article." : "articles."} <br></br>Vous en avez pour {cartTotal} €</h1>
+        <h1>
+          Panier : {totalUniqueItems}{" "}
+          {totalUniqueItems === 1 ? "article." : "articles."} <br></br>Vous en
+          avez pour {cartTotal} €
+        </h1>
         <ul>
           {items.map((item) => (
             <li key={item.id} className="cart-item">
-              <div className="cart-item-details">
-                <span className="cart-item-title">{item.title}</span>
-                <br></br>
-                <img className="cart-item-image" src={item.image}></img>
-              </div>
+              <img
+                className="cart-item-image"
+                src={item.image}
+                alt={item.title}
+              />
+
               <div className="cart-item-actions">
-              <span className="cart-item-quantity">
+                <p className="cart-item-title">{item.title}</p>
+              </div>
+              <div className="cart-item-details">
+                <span className="cart-item-quantity">
                   Quantité : {item.quantity}
                 </span>
+                <p className="cart-item-price">{item.price} €</p>
+
                 <button
                   className="cart-btn"
                   onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
@@ -56,6 +70,7 @@ export default function PanierScreen() {
             </li>
           ))}
         </ul>
+        <button className="cart-btn cart-btn-remove" onClick={() =>emptyCart()}>Vider le panier</button>
       </div>
     </CartProvider>
   );
