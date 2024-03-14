@@ -2,20 +2,34 @@
   color: #fff;
 }
 
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  row-gap: 40px;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+
 .product-list-container {
   width: 90%;
   margin: 0 auto;
   padding: 20px;
   background-color: #000;
   color: #fff;
+  text-align: center;
 }
 
 .product-item {
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .product-item h2 {
-  color: gold;
+  color: #d4af37;
 }
 
 .product-item img {
@@ -33,7 +47,7 @@
   font-family: "Roboto", sans-serif;
 }
 
-.price {
+.product-list-container .price {
   color: red;
 }
 
@@ -41,14 +55,19 @@
   background-color: black;
 }
 
-.product-item button {
+.product-item a {
   cursor: pointer;
   background-color: #d4af37;
-  width: 150px;
-  height: auto;
+  width: 180px; /* Largeur du lien */
+  height: 50px; /* Hauteur du lien */
   border-radius: 12px;
+  display: flex; /* Utilisation de flexbox pour aligner le contenu verticalement */
+  justify-content: center; /* Alignement du contenu horizontalement */
+  align-items: center; /* Alignement du contenu verticalement */
   font-size: large;
+  text-decoration: none;
 }
+
 body,
 html {
   background-color: black;
@@ -154,4 +173,48 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.navbar {
+  background-color: #d4af37;
+}
+
+.nav-list {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(120px, 1fr)
+  ); /* Utilisation de CSS Grid */
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-list li {
+  text-align: center;
+}
+
+.lien {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.lien:hover {
+  background-color: #555;
+}
+
+.active {
+  font-weight: bolder;
+  font-size: large;
+}
+
+.special-link {
+  color: white; /* Couleur jaune pour l'élément spécial */
+  font-size: 40px; /* Taille de police plus grande pour l'élément spécial */
+}
+
+.lien:hover,
+.special-link:hover {
+  color: #ccc;
 }

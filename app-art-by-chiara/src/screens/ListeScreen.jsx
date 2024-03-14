@@ -44,28 +44,34 @@ export default function getAllProducts() {
         </div>
       ) : (
         <CartProvider>
-        <div className="product-list-container" align="center">
-          <h1>Liste des produits</h1>
-          {produits.map((produit) => (
-            <div key={produit.id} className="product-item">
-            {recherche == "" || produit.title.includes(recherche) ? (
-              <>
-              <h2>{produit.title}</h2>
-              <img src={produit.image} alt={produit.title} />
-              <p className="description">{produit.description}</p>
-              <p className="price">Prix : {produit.price} €</p>
-              <p>Taille : {produit.size}</p>
-              <p>Collection : {produit.collection}</p>
-              <button onClick={() => addItem(produit)}>Ajouter au panier</button>
-          </>
-            ) : (
-              <></>
-            )
-          }
-            </div>
-          ))}
-        </div>
-      </CartProvider>
+          <div className="product-list-container" align="center">
+            <h1>Liste des Œuvres</h1>
+            <div className="product-list">
+              {produits.map((produit) => (
+                <div key={produit.id} className="product-item">
+                  {recherche == "" || produit.title.includes(recherche) ? (
+                    <>
+                      <h2>{produit.title}</h2>
+                      <img src={produit.image} alt={produit.title} />
+                      <p className="description">{produit.description}</p>
+                      <p className="price">Prix : {produit.price} €</p>
+                      <p>Taille : {produit.size}</p>
+                      <p>Collection : {produit.collection}</p>
+                      <a className="aToSee" href={"/one-produit/" + produit.id}>
+                        Voir le produit
+                      </a>
+                      <button onClick={() => addItem(produit)}>
+                        Ajouter au panier
+                      </button>
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              ))}
+            </div>{" "}
+          </div>
+        </CartProvider>
       )}
     </div>
   );
