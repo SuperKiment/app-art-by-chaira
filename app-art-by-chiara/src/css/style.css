@@ -225,3 +225,7 @@ a {
   border: 3px solid #d4af37;
   color: #fff;
 }
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
