@@ -15,8 +15,7 @@
 }
 
 .product-item img {
-  width: 100%;
-  max-width: 400px;
+  width: 200px;
   height: auto;
   border: 4px solid #D4af37;
   border-radius: 12px;
@@ -36,4 +35,13 @@
 
 #root{
     background-color: black;
+}
+
+.product-item button{
+  cursor: pointer;
+  background-color: #D4af37;
+  width: 150px;
+  height: auto;
+  border-radius: 12px;
+  font-size: large;
 }

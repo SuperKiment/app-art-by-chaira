@@ -33,16 +33,14 @@ export default function getAllProducts() {
           <p>Chargement...</p>
         </div>
       ) : (
-        <div className="product-list-container" align="center">
+        <div className="product-list-container">
           <h1>Liste des produits</h1>
           {produits.map((produit) => (
             <div key={produit.id} className="product-item">
               <h2>{produit.title}</h2>
               <img src={produit.image} alt={produit.title} />
-              <p className="description">{produit.description}</p>
               <p className="price">Prix : {produit.price} €</p>
-              <p>Taille : {produit.size}</p>
-              <p>Collection : {produit.collection}</p>
+              <button className="buttonSee">Voir le produit</button>
             </div>
           ))}
         </div>
