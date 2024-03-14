@@ -1,5 +1,3 @@
-
-
 * {
   color: #fff;
   transition: 200ms;
@@ -94,9 +92,9 @@ html {
 
 .container {
   display: flex;
-  margin: 0 auto;
   justify-content: center;
   border-radius: 10px;
+  margin: 2%;
 }
 
 .one-product-container {
@@ -111,14 +109,9 @@ html {
   background-color: #d4af37;
 }
 
-
-
 .nav-list {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(120px, 1fr)
-  ); 
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -176,11 +169,11 @@ select {
 }
 
 a:hover {
-  background-color: #b8962e; 
+  background-color: #b8962e;
 }
 
 .btn-add-to-cart i {
-  margin-right: 8px; 
+  margin-right: 8px;
 }
 
 .empty-cart {
@@ -235,6 +228,6 @@ a:hover {
   height: auto;
 }
 
-.popup{
+.popup {
   color: black;
 }
