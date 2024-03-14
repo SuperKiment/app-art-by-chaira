@@ -187,13 +187,12 @@ a:hover {
   padding: 10px 0;
 }
 
-.cart-item-details {
-  flex-grow: 1;
-}
-
 .cart-item-title {
   font-weight: bold;
   font-size: 30px;
+}
+.cart-item-quantity {
+  font-size: 20px;
 }
 
 .cart-item-actions {
