@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import GetOneProduit from "../components/api.jsx";
 import { useParams } from "react-router";
+import { ToastContainer, toast } from 'react-toastify';
+import { CartProvider, useCart } from "react-use-cart";
 
 function OneProduitPage({ navigation, idProduit }) {
+  const { addItem } = useCart();
   const { id } = useParams();
   const [oneProduit, setOneProduit] = useState();
 
@@ -11,7 +14,10 @@ function OneProduitPage({ navigation, idProduit }) {
       setOneProduit(rep);
     });
   }, []);
-  console.log("produit :", oneProduit);
+  const addToCart = (produit) => {
+    addItem(produit);
+    toast.success(<p className="popup">Le produit a bien été ajouté au panier.</p>);
+  };
 
   return (
     <>
@@ -34,7 +40,7 @@ function OneProduitPage({ navigation, idProduit }) {
               <p>Collection : {oneProduit.collection}</p>
 
               <div>
-                <a className="button">Ajouter à mon panier</a>
+                <a onClick={() => addToCart(oneProduit)} className="button">Ajouter à mon panier</a>
               </div>
             </div>
           </div>

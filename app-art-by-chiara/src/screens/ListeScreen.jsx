@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../css/style.css";
-import PanierScreen from "./PanierScreen";
 import { CartProvider, useCart } from "react-use-cart";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-export default function getAllProducts() {
+function getAllProducts() {
   const { addItem } = useCart();
   const [loading, setLoading] = useState(true);
   const [produits, setProduits] = useState([]);
@@ -29,6 +30,11 @@ export default function getAllProducts() {
 
     fetchProducts();
   }, []);
+
+  const addToCart = (produit) => {
+    addItem(produit);
+    toast.success(<p className="popup">Le produit a bien été ajouté au panier.</p>);
+  };
 
   return (
     <div>
@@ -63,7 +69,7 @@ export default function getAllProducts() {
                             <i className="fas fa-eye"></i> Voir le produit
                           </span>
                         </a>
-                        <a onClick={() => addItem(produit)}>
+                        <a onClick={() => addToCart(produit)}>
                           <span>
                             <i className="fas fa-shopping-cart"></i> Ajouter au
                             panier
@@ -83,3 +89,5 @@ export default function getAllProducts() {
     </div>
   );
 }
+
+export default getAllProducts;
