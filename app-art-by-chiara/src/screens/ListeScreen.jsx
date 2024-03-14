@@ -34,15 +34,17 @@ export default function getAllProducts() {
         </div>
       ) : (
         <div className="product-list-container">
-          <h1>Liste des produits</h1>
+          <h1>Liste des Œuvres</h1>
+          <div className="product-list">
           {produits.map((produit) => (
             <div key={produit.id} className="product-item">
               <h2>{produit.title}</h2>
               <img src={produit.image} alt={produit.title} />
               <p className="price">Prix : {produit.price} €</p>
-              <button className="buttonSee">Voir le produit</button>
+              <a className="aToSee" href={"/one-produit/"+produit.id}>Voir le produit</a>
             </div>
           ))}
+        </div>
         </div>
       )}
     </div>
